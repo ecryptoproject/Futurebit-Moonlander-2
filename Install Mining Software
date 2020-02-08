@@ -1,0 +1,20 @@
+Install Mining Software:
+sudo apt-get update
+
+sudo apt-get upgrade -y
+
+sudo apt-get install -y libcurl4-gnutls-dev libjansson-dev
+
+mkdir -p mining/moonlander2; cd mining/moonlander2
+
+wget https://github.com/jstefanop/bfgminer/releases/download/bfgminer-5.4.2-futurebit2/bfgminer_5.4.2-futurebit2_linux_x86_64.tar.gz
+
+tar -xzf bfgminer_5.4.2-futurebit2_linux_x86_64.tar.gz
+
+cd bfgminer_5.4.2-futurebit2_linux_x86_64
+
+./bfgminer --help
+
+Start Miner:
+cd ~/mining/moonlander2/bfgminer_5.4.2-futurebit2_linux_x86_64
+./bfgminer --scrypt -o stratum+tcp://POLL -u WORKER -p 1,d=128 -S ALL --set MLD:clock=600
